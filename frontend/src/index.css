@@ -40,23 +40,23 @@
 
 /* ---------- Light Theme (default) ---------- */
 [data-theme='light'] {
-  --color-bg-primary: #e5e5dd;
+  --color-bg-primary: #f8f8f2;
   --color-bg-secondary: #ffffff;
-  --color-bg-tertiary: #efefea;
-  --color-bg-glass: rgba(255, 255, 255, 0.94);
+  --color-bg-tertiary: #f0f0e8;
+  --color-bg-glass: rgba(255, 255, 255, 0.96);
   --color-bg-input: #ffffff;
-  --color-bg-hover: rgba(45, 80, 22, 0.06);
+  --color-bg-hover: rgba(45, 80, 22, 0.08);
   --color-bg-card: #ffffff;
   --color-bg-sidebar: #ffffff;
 
   --color-text-primary: #000000;
-  --color-text-secondary: #333333;
-  --color-text-tertiary: #666666;
+  --color-text-secondary: #1a1a1a;
+  --color-text-tertiary: #4d4d4d;
   --color-text-inverse: #ffffff;
 
-  --color-border: #bbbbb0;
-  --color-border-focus: #2d5016;
-  --color-divider: #e8e8e3;
+  --color-border: #75756a;
+  --color-border-focus: #1f3a0f;
+  --color-divider: #d1d1ca;
 
   /* Main accent — olive/forest green */
   --color-accent: #2d5016;
@@ -92,12 +92,12 @@
   --navbar-bg: rgba(255, 255, 255, 0.95);
   --navbar-border: #e8e8e3;
 
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.06);
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
-  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.15);
-  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.03);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.14);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.16);
+  --shadow-xl: 0 24px 80px rgba(0, 0, 0, 0.2);
+  --shadow-card: 0 8px 20px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
   --shadow-card-hover: 0 12px 32px rgba(0, 0, 0, 0.12);
   --shadow-glow: 0 0 20px rgba(45, 80, 22, 0.12);
 }
@@ -105,22 +105,22 @@
 /* ---------- Dark Theme ---------- */
 [data-theme='dark'] {
   --color-bg-primary: #000000;
-  --color-bg-secondary: #0a0a0a;
-  --color-bg-tertiary: #1a1a1a;
-  --color-bg-glass: rgba(0, 0, 0, 0.94);
-  --color-bg-input: #111111;
-  --color-bg-hover: rgba(74, 122, 46, 0.15);
-  --color-bg-card: #0d0d0d;
-  --color-bg-sidebar: #080808;
+  --color-bg-secondary: #000000;
+  --color-bg-tertiary: #111111;
+  --color-bg-glass: rgba(0, 0, 0, 0.96);
+  --color-bg-input: #050505;
+  --color-bg-hover: rgba(74, 122, 46, 0.2);
+  --color-bg-card: #080808;
+  --color-bg-sidebar: #000000;
 
   --color-text-primary: #ffffff;
-  --color-text-secondary: #cccccc;
-  --color-text-tertiary: #999999;
+  --color-text-secondary: #f0f0f0;
+  --color-text-tertiary: #b3b3b3;
   --color-text-inverse: #000000;
 
-  --color-border: #444444;
-  --color-border-focus: #5a8a3a;
-  --color-divider: #222222;
+  --color-border: #555555;
+  --color-border-focus: #7aaa5a;
+  --color-divider: #333333;
 
   --color-accent: #4a7a2e;
   --color-accent-hover: #5a8a3a;
@@ -153,11 +153,11 @@
   --navbar-bg: rgba(17, 17, 17, 0.95);
   --navbar-border: #2a2a2a;
 
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.5);
-  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
-  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.7);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.6);
+  --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.7);
+  --shadow-md: 0 12px 24px rgba(0, 0, 0, 0.8);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.9);
+  --shadow-xl: 0 32px 80px rgba(0, 0, 0, 1.0);
   --shadow-card: 0 8px 16px rgba(0, 0, 0, 0.6);
   --shadow-card-hover: 0 16px 32px rgba(0, 0, 0, 0.8);
   --shadow-glow: 0 0 20px rgba(74, 122, 46, 0.25);
