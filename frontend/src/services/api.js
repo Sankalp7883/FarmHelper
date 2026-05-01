@@ -1,7 +1,14 @@
 import axios from 'axios';
 
+let baseUrl = import.meta.env.VITE_API_URL || '/api';
+
+// Automatically append /api if it's a full URL and missing the prefix
+if (baseUrl.startsWith('http') && !baseUrl.endsWith('/api')) {
+  baseUrl = baseUrl.endsWith('/') ? `${baseUrl}api` : `${baseUrl}/api`;
+}
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
+  baseURL: baseUrl,
   headers: {
     'Content-Type': 'application/json',
   },
