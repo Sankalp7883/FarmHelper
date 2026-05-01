@@ -1,0 +1,80 @@
+# FarmHelper - Project Context
+
+## Overview
+FarmHelper is a comprehensive Crop Recommendation System built with the MERN stack (MongoDB, Express, React, Node.js). The application helps farmers decide which crops to grow based on various parameters like location, soil type, and weather. It features a modern, premium UI with light-themed dashboard and integrates user authentication, historical searches, and weather widgets.
+
+## Project Structure
+The project is organized as a monorepo containing two main directories: `backend` and `frontend`.
+
+---
+
+## 1. Backend
+
+### Overview
+A RESTful API built with Node.js and Express to handle authentication, crop data, user history, and weather information.
+
+### Technologies & Dependencies
+*   **Core:** Node.js, Express
+*   **Database:** MongoDB, Mongoose
+*   **Authentication:** JWT (jsonwebtoken), bcryptjs, Google Auth Library (`google-auth-library`)
+*   **Utilities:** `cors`, `dotenv`, `express-validator`, `axios`
+
+### Directory Structure & Key Files
+*   **`server.js`**: Application entry point and server configuration.
+*   **`package.json`**: Dependencies and scripts (`start`, `dev`, `seed`).
+*   **`seed.js`**: Script to seed initial data into the database.
+*   **`models/`**: Mongoose schemas defining the database structure.
+    *   `User.js` (User accounts)
+    *   `Crop.js` (Crop information and characteristics)
+    *   `SearchHistory.js` (User recommendation logs)
+*   **`routes/`**: API endpoints.
+    *   `authRoutes.js` (Signup, login, Google Auth)
+    *   `cropRoutes.js` (Crop recommendations and listing)
+    *   `historyRoutes.js` (User's search/recommendation history)
+    *   `weatherRoutes.js` (Weather API integrations)
+*   **`controllers/`**: Logic for handling route requests.
+    *   `authController.js`
+    *   `cropController.js`
+    *   `historyController.js`
+    *   `weatherController.js`
+*   **`middleware/`**: Custom middleware (e.g., JWT authentication validation).
+*   **`config/`**: Database or environment configurations.
+*   **`utils/`**: Helper functions.
+*   **`data/`**: Static or seed data JSON files.
+
+---
+
+## 2. Frontend
+
+### Overview
+A modern, responsive React application built with Vite, featuring a professional, agricultural-themed UI.
+
+### Technologies & Dependencies
+*   **Core:** React 19, Vite
+*   **Routing:** React Router DOM
+*   **State & Data Fetching:** Axios, React Context API
+*   **Authentication:** `@react-oauth/google` for Google Sign-In
+*   **UI / Styling:** Custom Vanilla CSS (`index.css`), React Icons, React Hot Toast (for notifications)
+
+### Directory Structure & Key Files
+*   **`src/main.jsx` & `src/App.jsx`**: Main application setup and routing definitions.
+*   **`src/index.css`**: Comprehensive design system, containing CSS variables for the premium light theme, card aesthetics, and responsive layouts.
+*   **`src/pages/`**: Top-level route components.
+    *   `Login.jsx` & `Signup.jsx` (Authentication pages with full-screen backgrounds)
+    *   `Dashboard.jsx` (Main application interface)
+    *   `AboutUs.jsx` (Information page)
+*   **`src/components/`**: Reusable UI components.
+    *   `Navbar.jsx` & `Sidebar.jsx` (Layout and navigation)
+    *   `RecommendationForm.jsx` (Input form for crop prediction)
+    *   `CropCard.jsx` (Displaying crop results)
+    *   `WeatherWidget.jsx` (Current weather information)
+    *   `SearchHistory.jsx` (Past user recommendations)
+    *   `ProfileMenu.jsx` (User settings/logout dropdown)
+    *   `ProtectedRoute.jsx` (Route guard for authenticated areas)
+    *   `Loader.jsx` (Loading state UI)
+*   **`src/context/`**: Global state management.
+    *   `AuthContext.jsx` (Manages user session and authentication state)
+    *   `ThemeContext.jsx` (Manages theme preferences, if applicable)
+*   **`src/services/`**: API and external service integrations.
+    *   `api.js` (Axios configuration and API interceptors)
+*   **`eslint.config.js` & `vite.config.js`**: Build and linting configuration files.
