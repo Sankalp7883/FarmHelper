@@ -20,10 +20,14 @@ connectDB();
 // Middleware,,
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL, 'http://localhost:5173', 'http://localhost:3000'].filter(Boolean),
+    origin: [process.env.FRONTEND_URL, 'https://farm-helper-two.vercel.app', 'http://localhost:5173', 'http://localhost:3000'].filter(Boolean),
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
   })
 );
+// Handle preflight
+app.options('*', cors());
 app.use(express.json());
 
 // API Routes
