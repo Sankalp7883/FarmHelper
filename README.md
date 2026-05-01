@@ -96,6 +96,7 @@ PORT=5000
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
 WEATHER_API_KEY=your_openweathermap_api_key
+FRONTEND_URL=https://your-app-name.vercel.app  # Add this for production
 ```
 
 Seed the database with initial crops and fertilizers:
@@ -116,6 +117,7 @@ npm install
 Create a `.env` file in the `frontend` directory with the following variable:
 ```env
 VITE_GOOGLE_CLIENT_ID=your_google_oauth_client_id
+VITE_API_URL=https://your-backend-name.onrender.com/api  # Add this for production
 ```
 
 Start the frontend development server:
