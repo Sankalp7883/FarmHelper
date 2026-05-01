@@ -1,5 +1,7 @@
 # 🌾 FarmHelper
 
+**Live Demo:** [https://farm-helper-two.vercel.app](https://farm-helper-two.vercel.app)
+
 FarmHelper is a modern, full-stack agricultural web application built on the **MERN** (MongoDB, Express, React, Node.js) stack. It is designed to assist farmers and agricultural enthusiasts by providing data-driven crop recommendations, detailed crop and fertilizer catalogs, real-time weather data, and educational farming guides.
 
 ---
