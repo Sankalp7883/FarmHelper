@@ -63,6 +63,15 @@ const Dashboard = () => {
     try {
       const res = await api.post('/crops/recommend', { location, soilType, season });
       const data = res.data;
+
+      if (data.recommendedCrops) {
+        data.recommendedCrops.sort((a, b) => {
+          if (a.isAbundant && !b.isAbundant) return -1;
+          if (!a.isAbundant && b.isAbundant) return 1;
+          return 0;
+        });
+      }
+
       setResults(data);
 
       if (data.weather) setWeather(data.weather);

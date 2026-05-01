@@ -1,6 +1,7 @@
 const Crop = require('../models/Crop');
 const axios = require('axios');
 const { getSoilsByLocation } = require('../data/locationSoilMap');
+const { getAbundantCropsForLocation } = require('../data/regionalAbundanceMap');
 
 // @desc    Get soil types for a location
 // @route   GET /api/crops/soils?location=Mumbai
@@ -106,7 +107,13 @@ const recommendCrop = async (req, res) => {
       'temperatureRange.max': { $gte: temperature - 5 },
     };
 
-    const recommendedCrops = await Crop.find(query).sort({ cropName: 1 });
+    const recommendedCrops = await Crop.find(query).sort({ cropName: 1 }).lean();
+
+    const abundantCropsList = getAbundantCropsForLocation(location);
+    const processedCrops = recommendedCrops.map(crop => ({
+      ...crop,
+      isAbundant: abundantCropsList.includes(crop.cropName)
+    }));
 
     res.json({
       location: weatherData?.city || location,
@@ -114,8 +121,8 @@ const recommendCrop = async (req, res) => {
       season,
       currentTemperature: Math.round(temperature),
       weather: weatherData,
-      totalResults: recommendedCrops.length,
-      recommendedCrops,
+      totalResults: processedCrops.length,
+      recommendedCrops: processedCrops,
     });
   } catch (err) {
     console.error('Error in recommendCrop:', err.message);

@@ -31,7 +31,7 @@ const CropCard = ({ crop, index }) => {
 
   return (
     <div
-      className="crop-card"
+      className={`crop-card ${crop.isAbundant ? 'crop-card-abundant' : ''}`}
       style={{ animationDelay: `${index * 0.07}s`, cursor: 'pointer' }}
       id={`crop-card-${index}`}
       onClick={() => navigate(`/crop/${encodeURIComponent(crop.cropName)}`)}
@@ -40,6 +40,11 @@ const CropCard = ({ crop, index }) => {
       <div className={`crop-card-gradient ${gradientClass}`} />
 
       <div className="crop-card-body">
+        {crop.isAbundant && (
+          <div className="crop-abundant-badge">
+            ⭐ Top Regional Crop
+          </div>
+        )}
         <div className="crop-card-header">
           <h3 className="crop-card-name">{crop.cropName}</h3>
           {crop.waterRequirement && (
